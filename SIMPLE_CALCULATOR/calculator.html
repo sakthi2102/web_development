@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Calculator
+	</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="cal.css">
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<div id="body">
+		<div id="top">
+			<div id="con">
+				<div id="p">CALCULATOR</div>
+			</div>
+			<input  type="text"  id="numfield" placeholder="0" >
+			<button style="font-size:  20px;" id="bu1" onclick="allclear()">AC</button>
+			<button style="font-size:  20px;" id="bu2" onclick="clr()">C</button>
+			<button style="font-size:  20px;" id="bu3" onclick="bu('%')">%</button>
+			<button style="font-size:  20px;" id="bu4" onclick="bu('/')">/</button>
+			<button style="font-size:  20px;" id="bu5" onclick="bu('7')">7</button>
+			<button style="font-size:  20px;" id="bu6" onclick="bu('8')">8</button>
+			<button style="font-size:  20px;" id="bu7" onclick="bu('9')">9</button>
+			<button style="font-size:  20px;" id="bu8" onclick="bu('*')">*</button>
+			<button style="font-size:  20px;" id="bu9" onclick="bu('4')">4</button>
+			<button style="font-size:  20px;" id="bu10" onclick="bu('5')">5</button>
+			<button style="font-size:  20px;" id="bu11" onclick="bu('6')">6</button>
+			<button style="font-size:  20px;" id="bu12" onclick="bu('-')">-</button>
+			<button style="font-size:  20px;" id="bu13" onclick="bu('1')">1</button>
+			<button style="font-size:  20px;" id="bu14" onclick="bu('2')">2</button>
+			<button style="font-size:  20px;" id="bu15" onclick="bu('3')">3</button>
+			<button style="font-size:  20px;" id="bu16" onclick="bu('+')">+</button>
+			<button style="font-size:  20px;" id="bu17" onclick="bu('0')">0</button>
+			<button style="font-size:  20px;" id="bu18" onclick="bu('.')">.</button>
+			<button style="font-size:  20px;" id="bu20" onclick="equal()">=</button>
+		</div>
+	</div>
+	<script >
+		let output=document.getElementById("numfield");
+
+		function bu(num) {
+			output.value += num;
+		}
+		function equal()
+		{
+			try
+			{
+				output.value=eval(output.value);
+			}
+			catch(err)
+			{
+				alert("Invalid-Operation");
+				output.value="";
+			}
+		}
+		function allclear() 
+		{
+			output.value="";
+		}
+		function clr() 
+		{
+			output.value=output.value.slice(0,-1);		
+		}
+	</script>
+</body>
+</html>
